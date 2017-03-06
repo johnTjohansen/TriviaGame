@@ -1,0 +1,18 @@
+body {
+	background-image: url("../images/entry.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: 'IM Fell Double Pica', serif;
+}
+
+h1 {
+
+}
+
+.jumbotron {
+	background-color: white;
+	width: 80%;
+	height: 500px;
+	margin-left: 10%;
+	margin-top: 50px;
+}
