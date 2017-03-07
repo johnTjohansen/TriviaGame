@@ -1,3 +1,6 @@
+
+$(document).ready(function() {
+
 var quiz = [{
   "question": "How does Cordelia get her sight back?",
   "choices": ["Fiona takes Madame LaLaurie's eyes", "Misty Day restores her sight", "Myrtle melon-balls out the council's eyes"],
@@ -39,9 +42,73 @@ var quiz = [{
 var currentQuestion = 0;
 var score = 0;
 
+$("timerQ").on("click", function goGame() {
+	console.log("clicked start key");
+	document.getElementById(".timerQ").style.display = "none";
+	document.getElementById(".answerBox").style.visibility = "visible";
+	retrieveQuestion();
+});
 
-$("start").on("click", goGame());
+$("btn-A").on("click", function answerA() {
+	if (quiz.choices[currentQuestion][0] === quiz.correct(currentQuestion)) {
+		alert("Correct!");
+		score++; 
+	}
+	else {
+		alert("The correct answer is " + quiz.correct[currentQuestion]);
+	}
+	currentQuestion++;
+	retrieveQuestion();
+});
 
-function goGame() {
-	
+$("btn-B").on("click", function answerB() {
+	if (quiz.choices[currentQuestion][1] === quiz.correct(currentQuestion)) {
+		alert("Correct!");
+		score++; 
+	}
+	else {
+		alert("The correct answer is " + quiz.correct[currentQuestion]);
+	}
+	currentQuestion++;
+	retrieveQuestion();
+});
+
+$("btn-C").on("click", function answerC() {
+	if (quiz.choices[currentQuestion][2] === quiz.correct(currentQuestion)) {
+		alert("Correct!");
+		score++; 
+	}
+	else {
+		alert("The correct answer is " + quiz.correct[currentQuestion]);
+	}
+	currentQuestion++;
+	retrieveQuestion();
+});
+
+function retrieveQuestion() {
+	$("#questionRow").html(quiz.question[currentQuestion]);
+	$(".btn-A").text(quiz.choices[currentQuestion] [1]);
+	$(".btn-B").text(quiz.choices[currentQuestion] [2]);
+	$(".btn-C").text(quiz.choices[currentQuestion] [3]);
+	startTimer();
 };
+	
+function startTimer() {
+	var count=30;
+
+	var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+	function timer() {
+   		count=count-1;
+ 		if (count <= 0) {
+	  	  clearInterval(counter);
+ 	      alert("Time's up");
+ 	      currentQuestion++;
+ 	      retrieveQuestion();
+  	      return;
+		}
+		$(".timerQ").html=("Time remaining: " + count + " secs");
+	}
+};
+
+});

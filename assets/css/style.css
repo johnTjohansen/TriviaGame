@@ -10,9 +10,14 @@ h1 {
 }
 
 .jumbotron {
-	background-color: white;
-	width: 80%;
+	background-color: silver;
+	width: 60%;
 	height: 500px;
-	margin-left: 10%;
+	margin-left: 20%;
 	margin-top: 50px;
+}
+
+#answersBox {
+	visibility: hidden;
+
 }
