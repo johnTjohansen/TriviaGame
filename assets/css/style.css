@@ -9,6 +9,21 @@ h1 {
 	margin-bottom: 10px;
 }
 
+h2 {
+	font-size: 24px;
+}
+
+li {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+button {
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+}
+
 .jumbotron {
 	background-color: silver;
 	border: 5px double black;
@@ -18,7 +33,14 @@ h1 {
 	margin-top: 50px;
 }
 
+#timerSpace {
+	margin-bottom: 15px;
+}
+
 #answersBox {
 	visibility: hidden;
+}
 
+#question {
+	line-height: 1.5;
 }
